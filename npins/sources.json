@@ -1,0 +1,63 @@
+{
+  "pins": {
+    "flakey-profile": {
+      "type": "Tarball",
+      "url": "https://github.com/lf-/flakey-profile/archive/3b32c4a71f89b874fe0be2dc125eacb9c3473204.tar.gz",
+      "hash": "1298zrxici7if9bm8hs7rzm6p5981sx1s295s352gj54b3jm20na"
+    },
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "release-25.05",
+      "submodules": false,
+      "revision": "f21d9167782c086a33ad53e2311854a8f13c281e",
+      "url": "https://github.com/nix-community/home-manager/archive/f21d9167782c086a33ad53e2311854a8f13c281e.tar.gz",
+      "hash": "02j4a4df9z2zk95d985vcwb5i4vdriyrkx61ah9xwqyqjciw98rb"
+    },
+    "lanzaboote": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "lanzaboote"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.4.2",
+      "revision": "f0212638a2ec787a7841882f4477d40ae24f0a5d",
+      "url": "https://api.github.com/repos/nix-community/lanzaboote/tarball/v0.4.2",
+      "hash": "0xc1wawnb0297h5khxblmf9pd1fry950xkcm7mwlck19s2906h80"
+    },
+    "lix": {
+      "type": "Tarball",
+      "url": "https://git.lix.systems/lix-project/lix/archive/2.93.0.tar.gz",
+      "locked_url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/47aad376c87e2e65967f17099277428e4b3f8e5a.tar.gz?rev=47aad376c87e2e65967f17099277428e4b3f8e5a",
+      "hash": "0g17i8yz5j0i2v29c2fddksvnc5n8fc5ml2pz0jhxaia7ghmxhc6"
+    },
+    "lix-module": {
+      "type": "Tarball",
+      "url": "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz",
+      "locked_url": "https://git.lix.systems/api/v1/repos/lix-project/nixos-module/archive/cd2a9c028df820a83ca2807dc6c6e7abc3dfa7fc.tar.gz?rev=cd2a9c028df820a83ca2807dc6c6e7abc3dfa7fc",
+      "hash": "1pz4j93rwgf3hv3za3q16300kp9b74aglb1mbr5qpiw0g0mphm6p"
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixos-25.05",
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.809873.9a094440e02a/nixexprs.tar.xz",
+      "hash": "12fib0rpkpqldnh3r4vpnppaj0xr3qjjvvhsax8x001jhb2yvx4s"
+    },
+    "nixpkgs-unstable": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre861711.af745796c275/nixexprs.tar.xz",
+      "hash": "05xn34mhkjrpmnk9s90dlv3ga8f7bkqnmshvjfjw8110cq17cz1a"
+    }
+  },
+  "version": 5
+}
