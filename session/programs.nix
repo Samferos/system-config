@@ -25,8 +25,6 @@
 
   programs.adb.enable = true;
 
-  programs.nix-ld.enable = true;
-
   environment.systemPackages = with pkgs; [
     vim
     wget
