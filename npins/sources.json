@@ -21,29 +21,43 @@
       "url": "https://api.github.com/repos/nix-community/lanzaboote/tarball/v0.4.2",
       "hash": "0xc1wawnb0297h5khxblmf9pd1fry950xkcm7mwlck19s2906h80"
     },
-    "lix": {
-      "type": "Tarball",
-      "url": "https://git.lix.systems/lix-project/lix/archive/2.93.0.tar.gz",
-      "locked_url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/47aad376c87e2e65967f17099277428e4b3f8e5a.tar.gz?rev=47aad376c87e2e65967f17099277428e4b3f8e5a",
-      "hash": "0g17i8yz5j0i2v29c2fddksvnc5n8fc5ml2pz0jhxaia7ghmxhc6"
-    },
-    "lix-module": {
-      "type": "Tarball",
-      "url": "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz",
-      "locked_url": "https://git.lix.systems/api/v1/repos/lix-project/nixos-module/archive/cd2a9c028df820a83ca2807dc6c6e7abc3dfa7fc.tar.gz?rev=cd2a9c028df820a83ca2807dc6c6e7abc3dfa7fc",
-      "hash": "1pz4j93rwgf3hv3za3q16300kp9b74aglb1mbr5qpiw0g0mphm6p"
-    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-25.05",
-      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.809873.9a094440e02a/nixexprs.tar.xz",
-      "hash": "12fib0rpkpqldnh3r4vpnppaj0xr3qjjvvhsax8x001jhb2yvx4s"
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.811543.481cf557888e/nixexprs.tar.xz",
+      "hash": "0hmyrd0qlxbrg859fg6zl57781a0lzn5cfgjfg18vfq7j5p2ipwk"
     },
     "nixpkgs-unstable": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre861711.af745796c275/nixexprs.tar.xz",
-      "hash": "05xn34mhkjrpmnk9s90dlv3ga8f7bkqnmshvjfjw8110cq17cz1a"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre880602.cb82756ecc37/nixexprs.tar.xz",
+      "hash": "135p0bbpal4jw9wb3fb0b2wpfk9nxj9df8kd8yiwbhii3iniwkk6"
+    },
+    "sway": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "swaywm",
+        "repo": "sway"
+      },
+      "branch": "master",
+      "submodules": true,
+      "revision": "b7eb6177e1d634620d73d56224cf154e3b854e0f",
+      "url": null,
+      "hash": "1a581l0v22w5yka7dgkk0zglkdvpqp62s92qdkbmggvxz68y1bgm"
+    },
+    "xdg-desktop-portal-wlr": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "emersion",
+        "repo": "xdg-desktop-portal-wlr"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "0ab4f6f7908db671fa87013914830e5385536c7c",
+      "url": "https://github.com/emersion/xdg-desktop-portal-wlr/archive/0ab4f6f7908db671fa87013914830e5385536c7c.tar.gz",
+      "hash": "0hv8csrgnimb760alfckdfdhbqcs90l7wvsjbhgdxfd4gq6an1ac"
     }
   },
   "version": 5

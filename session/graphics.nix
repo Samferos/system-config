@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  ...
+}:
 {
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [
@@ -7,7 +12,7 @@
   ];
   hardware.nvidia.open = false;
 
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.package = pkgs-unstable.linuxPackages.nvidiaPackages.stable;
 
   hardware.nvidia.prime = {
     offload.enable = true;
@@ -19,18 +24,13 @@
 
   specialisation.full-power.configuration = {
     system.nixos.tags = [ "full-power" ];
-	hardware.nvidia.prime = {
-	  sync.enable = lib.mkForce true;
+    hardware.nvidia.prime = {
+      sync.enable = lib.mkForce true;
       offload.enable = lib.mkForce false;
       offload.enableOffloadCmd = lib.mkForce false;
-	};
+    };
 
-	environment.sessionVariables = {
-	  __NV_PRIME_RENDER_OFFLOAD=1;
-      __NV_PRIME_RENDER_OFFLOAD_PROVIDER="NVIDIA-G0";
-      __GLX_VENDOR_LIBRARY_NAME="nvidia";
-      __VK_LAYER_NV_optimus="NVIDIA_only";
-	};
+    hardware.nvidia.modesetting.enable = lib.mkForce true;
   };
 
   environment.systemPackages = with pkgs; [

@@ -14,6 +14,10 @@
 		checkReversePath = false;
   };
 
+  powerManagement.enable = true;
+
+  services.thermald.enable = true;
+
   ## networking.wireguard.interfaces = {
   ## 	wg0 = {
   ## 		ips = [ "10.8.0.5/24" ];

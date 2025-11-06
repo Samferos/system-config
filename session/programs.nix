@@ -1,23 +1,8 @@
-{ pkgs, ... }:
-
-let
-  sources = import ../npins;
-  nixpkgs-unstable = import sources.nixpkgs-unstable { };
-in
+{ pkgs, pkgs-unstable, ... }:
 {
-  programs.uwsm = {
-    enable = true;
-    waylandCompositors = {
-      sway = {
-        prettyName = "sway";
-        comment = "an i3 compatible wayland compositor";
-        binPath = "/run/current-system/sw/bin/sway";
-      };
-    };
-  };
-
   programs.neovim = {
     enable = true;
+    package = pkgs-unstable.neovim-unwrapped;
     defaultEditor = true;
   };
 
@@ -56,7 +41,7 @@ in
     pwvucontrol
     python3
     mpv
-    nixpkgs-unstable.euphonica
+    amberol
     npins
     glib
     gamemode

@@ -11,7 +11,7 @@
     ./services
     ./programs.nix
     ./graphics.nix
-	./modules/desktop.nix
+    ./modules/desktop.nix
   ];
 
   ## Fonts
@@ -25,19 +25,27 @@
         fonts = [
           "Outfit"
           "Roboto"
+          "Roboto Flex"
+          "Fraunces"
+          "Rubik"
+          "Inter"
+          "IBM Plex Sans"
         ];
       })
     ];
     fontconfig = {
       defaultFonts = {
         sansSerif = [
-          "Outfit"
+          "Rubik"
+          "IBM Plex Sans"
+          "Roboto"
           "Noto Sans"
+          "Outfit"
         ];
         monospace = [ "0xProto Nerd Font" ];
       };
     };
-	fontDir.enable = true;
+    fontDir.enable = true;
   };
 
   ## Input
@@ -55,50 +63,31 @@
   security.polkit.enable = true;
 
   i18n.inputMethod = {
-	enable = true;
-  	type = "fcitx5";
-	fcitx5.addons =  with pkgs; [
-		fcitx5-gtk
-		fcitx5-mozc-ut
-	];
-	fcitx5.waylandFrontend = true;
-  };
-
-  ## TODO improve session management.
-  services.greetd = {
     enable = true;
-    settings = {
-      default_session.command = ''
-        				${pkgs.greetd.greetd}/bin/agreety \
-        				--cmd '${pkgs.uwsm}/bin/uwsm start \
-        				${config.programs.sway.package or pkgs.sway}/bin/sway'
-        			'';
-      # Use the configured sway package in case it's been
-      # modified. Otherwise, use the default sway package.
-    };
+    type = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-gtk
+      fcitx5-mozc-ut
+    ];
+    fcitx5.waylandFrontend = true;
   };
 
   session.desktop.name = "sway";
-
-  services.displayManager = {
-    enable = true;
-  };
 
   ## XDG Settings
   xdg.portal = {
     enable = true;
     wlr = {
-	  enable = true;
-	  settings = {
-	    screencast = {
-		  max_fps = 60;
-		  chooser_type = "dmenu";
-		  chooser_cmd = "${pkgs.wofi}/bin/wofi --show dmenu";
-		};
-	  };
-	};
+      enable = true;
+      settings = {
+        screencast = {
+          max_fps = 60;
+          chooser_type = "dmenu";
+          chooser_cmd = "${pkgs.wofi}/bin/wofi --show dmenu";
+        };
+      };
+    };
     extraPortals = with pkgs; [
-	  # kdePackages.xdg-desktop-portal-kde
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
     ];

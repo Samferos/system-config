@@ -1,54 +1,50 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }:
-let
-  sources = import ../../npins;
-  nixpkgs-unstable = import sources.nixpkgs-unstable { };
 
+with lib;
+
+let
   cfg = config.session.desktop;
-  desktops = [
+  windowManagers = [
     "sway"
+    "niri"
+  ];
+  desktopEnvironments = [
     "kde"
   ];
+  desktops = windowManagers ++ desktopEnvironments;
+
 in
 {
   options.session.desktop = {
-    name = lib.mkOption {
+    name = mkOption {
       description = ''
         		  The name of the desired desktop.
         		  '';
-      type = lib.types.enum desktops;
+      type = types.enum desktops;
       default = "sway";
     };
   };
 
-  config = lib.mkMerge [
-    {
-      environment.systemPackages = with pkgs; [
-        wayland-utils
-        wl-clipboard
-      ];
-    }
-    (lib.mkIf (cfg.name == "sway") {
-      programs.sway = {
-        enable = true;
-        wrapperFeatures.gtk = true;
-        package = nixpkgs-unstable.swayfx;
-        extraPackages = with pkgs; [
-          # These programs end up in environment.systemPackages.
+  config =
+    let
+      windowManagerOptions = {
+        environment.systemPackages = with pkgs; [
           swayidle
           swaylock
-          swayws
+          swaybg
           grim
           slurp
           waybar
           mako
           wofi
           nautilus
-		  nautilus-open-any-terminal
+          nautilus-open-any-terminal
           file-roller
           evince
           baobab
@@ -59,53 +55,117 @@ in
           batsignal
           simple-scan
         ];
-        extraOptions = [
-          "--unsupported-gpu"
-        ];
-      };
 
-      programs.nm-applet.enable = true;
-      programs.gnome-disks.enable = true;
+        programs.nm-applet.enable = true;
+        programs.gnome-disks.enable = true;
+        services.blueman.enable = true;
+        security.soteria.enable = true; # Polkit GUI front-end
 
-      services.blueman.enable = true;
-      security.soteria.enable = true; # Polkit GUI front-end
-
-      programs.uwsm = {
-        enable = true;
-        waylandCompositors = {
-          sway = {
-            prettyName = "sway";
-            comment = "an i3 compatible wayland compositor";
-            binPath = "/run/current-system/sw/bin/sway";
-          };
+        services.xserver.displayManager.gdm = {
+          enable = true;
+          wayland = true;
         };
+
+        environment.sessionVariables = {
+          NIXOS_OZONE_WL = 1;
+        };
+
+        # services.redshift = {
+        #   enable = true;
+        #   package = pkgs.gammastep;
+        #   executable = "/bin/gammastep";
+        #   temperature.day = 6500;
+        # };
+
+        # services.geoclue2 = {
+        #   enable = true;
+        #   enableWifi = true;
+        #   enableNmea = false;
+        # };
+
+        # location.provider = "geoclue2";
       };
+    in
+    mkMerge [
+      # General options (for window managers & DEs)
+      {
+        environment.systemPackages = with pkgs; [
+          wayland-utils
+          wl-clipboard
+        ];
 
-    })
-    (lib.mkIf (cfg.name == "kde") {
-      services.desktopManager.plasma6.enable = true;
+        services.displayManager = {
+          enable = true;
+        };
+      }
 
-      environment.systemPackages = with pkgs; [
-        kdePackages.kcalc
-        kdePackages.kcharselect
-        kdePackages.kcolorchooser
-        kdePackages.kolourpaint
-        kdePackages.ksystemlog
-        kdePackages.sddm-kcm
-        kdiff3
-        kdePackages.isoimagewriter
-        kdePackages.partitionmanager
-        hardinfo2
-        haruna
-      ];
+      ## Window managers
+      (mkIf (builtins.elem cfg.name windowManagers) (mkMerge [
+        windowManagerOptions
 
-      environment.plasma6.excludePackages = with pkgs.kdePackages; [
-        plasma-browser-integration
-        kdepim-runtime
-        konsole 
-        oxygen
-		discover
-      ];
-    })
-  ];
+        (mkIf (cfg.name == "sway") {
+          programs.sway = {
+            enable = true;
+            wrapperFeatures.gtk = true;
+            package = pkgs-unstable.swayfx;
+            extraPackages = with pkgs; [
+              swayws
+            ];
+            extraOptions = [
+              "--unsupported-gpu"
+            ];
+          };
+
+          programs.uwsm = {
+            enable = true;
+            waylandCompositors = {
+              sway = {
+                prettyName = "sway";
+                comment = "an i3 compatible wayland compositor";
+                binPath = "/run/current-system/sw/bin/sway";
+              };
+            };
+          };
+        })
+
+        (mkIf (cfg.name == "niri") {
+          programs.niri.enable = true;
+
+          environment.systemPackages = with pkgs; [
+            xwayland-satellite
+          ];
+        })
+      ]))
+
+      ## Desktop environments
+      (mkIf (cfg.name == "kde") {
+        services.desktopManager.plasma6.enable = true;
+        services.displayManager.sddm = {
+          enable = true;
+          wayland.enable = true;
+        };
+
+        environment.systemPackages = with pkgs; [
+          kdePackages.kcalc
+          kdePackages.kcharselect
+          kdePackages.kcolorchooser
+          kdePackages.kolourpaint
+          kdePackages.ksystemlog
+          kdePackages.sddm-kcm
+          kdiff3
+          kdePackages.isoimagewriter
+          kdePackages.partitionmanager
+          hardinfo2
+          haruna
+        ];
+
+        environment.plasma6.excludePackages = with pkgs.kdePackages; [
+          plasma-browser-integration
+          kdepim-runtime
+          konsole
+          oxygen
+          discover
+        ];
+      })
+    ];
 }
