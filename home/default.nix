@@ -75,12 +75,6 @@ in
         -Dawt.toolkit.name=WLToolkit
         '';
       })
-      # (pkgs-unstable.vscode-with-extensions.override {
-      #   vscode = pkgs-unstable.vscodium;
-      #   vscodeExtensions = with pkgs-unstable.vscode-extensions; [
-      #     vscodevim.vim
-      #   ];
-      # })
       pkgs-unstable.vscodium-fhs
       godot-mono
       nixd
