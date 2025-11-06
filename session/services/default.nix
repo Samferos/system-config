@@ -7,7 +7,7 @@
   ];
 
   session.services.ai = {
-    enable = true;
+    enable = false;
     useNvidia = true;
   };
 

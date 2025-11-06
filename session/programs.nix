@@ -9,9 +9,6 @@
   programs.firefox.enable = false;
   programs.chromium = {
     enable = true;
-    extensions = [
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-    ];
   };
   programs.git.enable = true;
   programs.thunderbird.enable = true;
@@ -45,6 +42,6 @@
     gamemode
     gimp3
     libreoffice-fresh
-    ungoogled-chromium
+    pkgs-unstable.ungoogled-chromium
   ];
 }
