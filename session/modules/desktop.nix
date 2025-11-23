@@ -29,6 +29,10 @@ in
       type = types.enum desktops;
       default = "sway";
     };
+
+    terminalEmulator = mkPackageOption pkgs "terminal-emulator" {
+      default = "alacritty";
+    };
   };
 
   config =
@@ -42,9 +46,8 @@ in
           slurp
           waybar
           mako
-          wofi
           nautilus
-          nautilus-open-any-terminal
+          wofi
           file-roller
           evince
           baobab
@@ -54,8 +57,23 @@ in
           gnome-characters
           batsignal
           simple-scan
+          libnotify
+          cfg.terminalEmulator
         ];
 
+        programs.nautilus-open-any-terminal = {
+          enable = true;
+          terminal = getName cfg.terminalEmulator;
+        };
+
+        xdg.terminal-exec = {
+          enable = true;
+          settings = {
+            default = [
+              "${getName cfg.terminalEmulator}.desktop"
+            ];
+          };
+        };
         programs.nm-applet.enable = true;
         programs.gnome-disks.enable = true;
         services.blueman.enable = true;
@@ -68,6 +86,14 @@ in
 
         environment.sessionVariables = {
           NIXOS_OZONE_WL = 1;
+        };
+
+        i18n.inputMethod = {
+          enable = true;
+          type = "ibus";
+          ibus.engines = with pkgs.ibus-engines; [
+            mozc-ut
+          ];
         };
 
         # services.redshift = {
@@ -166,6 +192,16 @@ in
           oxygen
           discover
         ];
+
+        i18n.inputMethod = {
+          enable = true;
+          type = "fcitx5";
+          fcitx5.addons = with pkgs; [
+            fcitx5-gtk
+            fcitx5-mozc-ut
+          ];
+          fcitx5.waylandFrontend = true;
+        };
       })
     ];
 }

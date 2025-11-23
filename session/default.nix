@@ -62,16 +62,6 @@
 
   security.polkit.enable = true;
 
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk
-      fcitx5-mozc-ut
-    ];
-    fcitx5.waylandFrontend = true;
-  };
-
   session.desktop.name = "sway";
 
   ## XDG Settings
@@ -79,13 +69,6 @@
     enable = true;
     wlr = {
       enable = true;
-      settings = {
-        screencast = {
-          max_fps = 60;
-          chooser_type = "dmenu";
-          chooser_cmd = "${pkgs.wofi}/bin/wofi --show dmenu";
-        };
-      };
     };
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
@@ -99,17 +82,6 @@
           "wlr"
         ];
       };
-    };
-  };
-
-  xdg.terminal-exec = {
-    enable = true;
-    settings = {
-      default = [
-        "alacritty.desktop"
-        # FIXME this is kinda bad and not self contained.
-        # Should maybe make a terminal-emulator module.
-      ];
     };
   };
 }

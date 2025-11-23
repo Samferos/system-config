@@ -14,7 +14,9 @@
   programs.thunderbird.enable = true;
   programs.steam.enable = true;
   programs.gamescope.enable = true;
-  programs.gamemode.enable = true;
+  programs.gamemode = {
+    enable = true;
+  };
 
   programs.dconf.enable = true;
 
@@ -28,18 +30,13 @@
     tree
     jq # JSON Utility CLI Tool
     brillo
-    alacritty
     rar
     unrar
-    helvum
+    helvum # GTK-UI for pipewire
     xdg-user-dirs
     pwvucontrol
-    python3
     mpv
-    amberol
     npins
-    glib
-    gamemode
     gimp3
     libreoffice-fresh
     pkgs-unstable.ungoogled-chromium
