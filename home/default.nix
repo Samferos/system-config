@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2023 Jade Lovelace
-#
-# SPDX-License-Identifier: CC0-1.0
-
 let
   sources = import ../npins;
 
@@ -34,7 +30,9 @@ in
       ## Games
       gale
       pkgs-unstable.heroic
-      prismlauncher
+      (prismlauncher.override {
+        glfw3-minecraft = (glfw3-minecraft.override { withMinecraftPatch = true; });
+      })
 
       ## Music
       ardour
@@ -54,7 +52,7 @@ in
       swww
       wayshot
       btop
-      matugen
+      pkgs-unstable.matugen
       bitwarden
       blender
       (pkgs.wrapOBS {
@@ -72,10 +70,14 @@ in
       })
       (pkgs-unstable.jetbrains.idea-community.override {
         vmopts = ''
-        -Dawt.toolkit.name=WLToolkit
+          -Dawt.toolkit.name=WLToolkit
         '';
       })
-      pkgs-unstable.vscodium-fhs
+      (pkgs-unstable.vscodium-fhsWithPackages (
+        ps: with ps; [
+          stdenv.cc.libcxx
+        ]
+      ))
       godot-mono
       nixd
       nil
