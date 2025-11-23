@@ -1,5 +1,7 @@
 diff --git a/src/main/csp/index.ts b/src/main/csp/index.ts
 index c4192f4b..10b52a3c 100644
+yeah this patch could be better (such putting the plugin in the external
+plugins folder instead of the integrated ones or whatever i forgot) but i'm lazy af
 --- a/src/main/csp/index.ts
 +++ b/src/main/csp/index.ts
 @@ -13,6 +13,7 @@ export const ConnectSrc = ["connect-src"];
