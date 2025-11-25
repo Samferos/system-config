@@ -7,9 +7,6 @@
   };
 
   programs.firefox.enable = false;
-  programs.chromium = {
-    enable = true;
-  };
   programs.git.enable = true;
   programs.thunderbird.enable = true;
   programs.steam.enable = true;
