@@ -21,15 +21,16 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       nerd-fonts._0xproto
+      rubik
       (google-fonts.override {
         fonts = [
           "Outfit"
           "Roboto"
           "Roboto Flex"
           "Fraunces"
-          "Rubik"
           "Inter"
           "IBM Plex Sans"
+          "Crimson Pro"
         ];
       })
     ];
@@ -41,6 +42,11 @@
           "Roboto"
           "Noto Sans"
           "Outfit"
+        ];
+        serif = [
+          "Fraunces"
+          "Crimson Pro"
+          "Noto Serif"
         ];
         monospace = [ "0xProto Nerd Font" ];
       };
