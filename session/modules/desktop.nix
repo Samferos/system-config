@@ -58,6 +58,7 @@ in
           batsignal
           simple-scan
           libnotify
+          gsettings-desktop-schemas
           cfg.terminalEmulator
         ];
 
