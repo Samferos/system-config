@@ -16,7 +16,7 @@ in
       folders = {
         "Music" = {
           path = musicFolder;
-          ignorePerms = false;
+          ignorePerms = true;
           devices = builtins.attrNames devices;
         };
       };

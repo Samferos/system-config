@@ -80,7 +80,7 @@ in
         services.blueman.enable = true;
         security.soteria.enable = true; # Polkit GUI front-end
 
-        services.xserver.displayManager.gdm = {
+        services.displayManager.gdm = {
           enable = true;
           wayland = true;
         };

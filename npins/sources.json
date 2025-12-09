@@ -5,33 +5,17 @@
       "url": "https://github.com/lf-/flakey-profile/archive/3b32c4a71f89b874fe0be2dc125eacb9c3473204.tar.gz",
       "hash": "1298zrxici7if9bm8hs7rzm6p5981sx1s295s352gj54b3jm20na"
     },
-    "lanzaboote": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nix-community",
-        "repo": "lanzaboote"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "v0.4.3",
-      "revision": "65a4aa3d4dccf50f22c0190c7ee660de51c586f2",
-      "url": "https://api.github.com/repos/nix-community/lanzaboote/tarball/v0.4.3",
-      "hash": "016pgbh27zjwbzq1li1d4r40b37vwmnz8khh04vspd5gw91szzi1"
-    },
     "nixpkgs": {
       "type": "Channel",
-      "name": "nixos-25.05",
-      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.812880.4c8cdd5b1a63/nixexprs.tar.xz",
-      "hash": "16678m7ar3lj5rffqyqmx5r16m0bmdpadymvfjva5f4y377cap6w"
+      "name": "nixos-25.11",
+      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.650.8bb5646e0bed/nixexprs.tar.xz",
+      "hash": "0gz9gdfqicq0hzs329xvck3p9k7nwl5warzcr023z4n6442h8f8v"
     },
     "nixpkgs-unstable": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre898015.6f374686605d/nixexprs.tar.xz",
-      "hash": "1ka7kc096xcas0gc3f3jks66yf1fbfyly8aimf3048ji65a3jkwr"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre905319.f720de590661/nixexprs.tar.xz",
+      "hash": "07n4hhch0j6n69b0zchdjg0l80z2xrdk7k57ykv90cvhklim5dz1"
     },
     "sway": {
       "type": "Git",

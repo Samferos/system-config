@@ -12,7 +12,7 @@
   ];
   hardware.nvidia.open = false;
 
-  hardware.nvidia.package = pkgs-unstable.linuxPackages_latest.nvidiaPackages.stable;
+  # hardware.nvidia.package = pkgs-unstable.linuxPackages_latest.nvidiaPackages.stable;
   # FIXME: very wacky, should not be disjointed from
   # core/kernel.nix
 

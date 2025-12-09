@@ -53,7 +53,7 @@ in
       wayshot
       btop
       pkgs-unstable.matugen
-      bitwarden
+      bitwarden-desktop
       blender
       (pkgs.wrapOBS {
         plugins = with pkgs.obs-studio-plugins; [
