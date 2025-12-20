@@ -47,7 +47,7 @@ in
           waybar
           mako
           nautilus
-          wofi
+          rofi
           file-roller
           evince
           baobab
