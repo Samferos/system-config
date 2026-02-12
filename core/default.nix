@@ -32,26 +32,26 @@
       textLanguage = "en_US.UTF-8";
       infoLanguage = "fr_FR.UTF-8";
     in
-    {
-      defaultLocale = "en_US.UTF-8";
-      supportedLocales = [
-        "en_US.UTF-8/UTF-8"
-        "fr_FR.UTF-8/UTF-8"
-      ];
-      extraLocaleSettings = {
-        LC_CTYPE = textLanguage;
-        LC_ADDRESS = infoLanguage;
-        LC_MEASUREMENT = infoLanguage;
-        LC_MESSAGES = textLanguage;
-        LC_MONETARY = infoLanguage;
-        LC_NAME = infoLanguage;
-        LC_NUMERIC = textLanguage;
-        LC_PAPER = infoLanguage;
-        LC_TELEPHONE = infoLanguage;
-        LC_TIME = infoLanguage;
-        LC_COLLATE = infoLanguage;
+      {
+        defaultLocale = "en_US.UTF-8";
+        supportedLocales = [
+          "en_US.UTF-8/UTF-8"
+          "fr_FR.UTF-8/UTF-8"
+        ];
+        extraLocaleSettings = {
+          LC_CTYPE = textLanguage;
+          LC_ADDRESS = infoLanguage;
+          LC_MEASUREMENT = infoLanguage;
+          LC_MESSAGES = textLanguage;
+          LC_MONETARY = infoLanguage;
+          LC_NAME = infoLanguage;
+          LC_NUMERIC = textLanguage;
+          LC_PAPER = infoLanguage;
+          LC_TELEPHONE = infoLanguage;
+          LC_TIME = infoLanguage;
+          LC_COLLATE = infoLanguage;
+        };
       };
-    };
   console = {
     keyMap = "fr";
   };
@@ -60,4 +60,8 @@
   security.doas = {
     enable = true;
   };
+
+  security.pam.loginLimits = [
+    { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+  ];
 }

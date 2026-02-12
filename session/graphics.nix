@@ -24,6 +24,8 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
+  hardware.nvidia.modesetting.enable = true;
+
   specialisation.full-power.configuration = {
     system.nixos.tags = [ "full-power" ];
     hardware.nvidia.prime = {
@@ -31,8 +33,6 @@
       offload.enable = lib.mkForce false;
       offload.enableOffloadCmd = lib.mkForce false;
     };
-
-    hardware.nvidia.modesetting.enable = lib.mkForce true;
   };
 
   environment.systemPackages = with pkgs; [

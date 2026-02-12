@@ -9,9 +9,12 @@
       "cuda_cudart"
       "cuda_cccl"
       "cuda_nvcc"
+      "android-studio"
       "android-studio-stable"
       "android-studio-for-platform"
     ];
+
+  config.cudaSupport = true;
 
   overlays = [
     (final: prev: {

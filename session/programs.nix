@@ -1,23 +1,30 @@
 { pkgs, pkgs-unstable, ... }:
 {
-  programs.neovim = {
-    enable = true;
-    package = pkgs-unstable.neovim-unwrapped;
-    defaultEditor = true;
-  };
-
   programs.firefox.enable = false;
   programs.git.enable = true;
   programs.thunderbird.enable = true;
   programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
   programs.gamescope.enable = true;
   programs.gamemode = {
     enable = true;
   };
 
+  services.emacs = {
+    enable = true;
+    package = with pkgs; ((emacsPackagesFor emacs).emacsWithPackages (epkgs: with epkgs; [
+      tree-sitter-langs
+      treesit-grammars.with-all-grammars
+    ]));
+    defaultEditor = true;
+    startWithGraphical = true;
+  };
+
   programs.dconf.enable = true;
 
   hardware.brillo.enable = true; # backlight control tool
+
+  hardware.keyboard.qmk.enable = true;
 
   programs.adb.enable = true;
 
@@ -32,10 +39,11 @@
     helvum # GTK-UI for pipewire
     xdg-user-dirs
     pwvucontrol
-    mpv
     npins
     gimp3
     libreoffice-fresh
-    pkgs-unstable.ungoogled-chromium
+    ungoogled-chromium
+    celluloid
+    gapless
   ];
 }

@@ -1,3 +1,4 @@
+
 let
   sources = import ../npins;
 
@@ -6,6 +7,8 @@ let
   pkgs-unstable = import sources.nixpkgs-unstable (import ./nixpkgs.nix { lib = pkgs-unstable.lib; });
 
   flakey-profile = import (sources.flakey-profile + "/lib");
+
+  custom-pkgs = import ../packages { inherit (pkgs) callPackage };
 in
 {
   profile = flakey-profile.mkProfile {
@@ -23,6 +26,9 @@ in
       ## Socials
       discord
 
+      ## Educational
+      anki
+
       ## Design
       inkscape
       aseprite
@@ -33,6 +39,7 @@ in
       (prismlauncher.override {
         glfw3-minecraft = (glfw3-minecraft.override { withMinecraftPatch = true; });
       })
+      waywall
 
       ## Music
       ardour
@@ -41,7 +48,6 @@ in
       ffmpeg # Beets replaygain method
       audacity
       mprisence # Discord MPRIS RPC
-      pkgs-unstable.recordbox
 
       ## Utility
       fd # nvim-telescope find file
@@ -66,23 +72,20 @@ in
       ## Developement
       (pkgs-unstable.android-studio.override {
         tiling_wm = true;
-        forceWayland = true;
-      })
-      (pkgs-unstable.jetbrains.idea-community.override {
-        vmopts = ''
-          -Dawt.toolkit.name=WLToolkit
-        '';
       })
       (pkgs-unstable.vscodium-fhsWithPackages (
         ps: with ps; [
           stdenv.cc.libcxx
         ]
       ))
-      godot-mono
+      pkgs-unstable.godot-mono
       nixd
       nil
       nixfmt-rfc-style
       git-repo
+      glab
+      nix-direnv
+      direnv
 
       ## Emulators
       cemu
@@ -91,7 +94,8 @@ in
       ## Theming
       tela-icon-theme
       adw-gtk3
-      capitaine-cursors
+      bibata-cursors
+      marble-shell-theme
 
       ## Shell
       antidote

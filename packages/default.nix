@@ -1,5 +1,4 @@
-{ lib }:
-let
-  inherit (lib) callPackage;
-in 
-{ }
+{ callPackage }:
+{
+  kotlin-lsp = callPackage ./kotlin-lsp.nix {};
+}

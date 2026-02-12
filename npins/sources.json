@@ -8,14 +8,14 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-25.11",
-      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.650.8bb5646e0bed/nixexprs.tar.xz",
-      "hash": "0gz9gdfqicq0hzs329xvck3p9k7nwl5warzcr023z4n6442h8f8v"
+      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.5065.41e216c0ca66/nixexprs.tar.xz",
+      "hash": "11l3mnblcqr3yxgplphs57ws0a01g5xcgkjkxhixyhjc1gx84srq"
     },
     "nixpkgs-unstable": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre905319.f720de590661/nixexprs.tar.xz",
-      "hash": "07n4hhch0j6n69b0zchdjg0l80z2xrdk7k57ykv90cvhklim5dz1"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre938561.eb8d947de7b0/nixexprs.tar.xz",
+      "hash": "1b8lji9phpjyr8pg5qx66jwagqvwn6kdgdxzdvyg5vc8f7cyx4gi"
     },
     "sway": {
       "type": "Git",

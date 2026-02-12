@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }:
@@ -25,11 +26,13 @@
       (google-fonts.override {
         fonts = [
           "Outfit"
+          "Google Sans"
           "Roboto"
           "Roboto Flex"
           "Fraunces"
           "Inter"
           "IBM Plex Sans"
+          "Source Serif 4"
           "Crimson Pro"
         ];
       })
@@ -38,6 +41,7 @@
       defaultFonts = {
         sansSerif = [
           "Rubik"
+          "Google Sans"
           "IBM Plex Sans"
           "Roboto"
           "Noto Sans"
@@ -45,6 +49,7 @@
         ];
         serif = [
           "Fraunces"
+          "Source Serif 4"
           "Crimson Pro"
           "Noto Serif"
         ];
@@ -73,9 +78,7 @@
   ## XDG Settings
   xdg.portal = {
     enable = true;
-    wlr = {
-      enable = true;
-    };
+    wlr.enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
