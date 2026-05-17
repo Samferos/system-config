@@ -14,7 +14,8 @@ in
 
   nix.nixPath = [
     "nixpkgs=flake:nixpkgs"
-		"nixpkgs-overlays=${builtins.toString ./core/overlays}"
+    "nixpkgs-unstable=${sources.nixpkgs-unstable}"
+	"nixpkgs-overlays=${builtins.toString ./core/overlays}"
     "nixos-config=${builtins.toString ./configuration.nix}"
   ];
 }

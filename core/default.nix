@@ -55,6 +55,12 @@
   console = {
     keyMap = "fr";
   };
+  services.kmscon = {
+  	enable = true;
+  	extraConfig = ''
+  	xkb-layout=fr
+  	'';
+  };
 
   security.sudo.enable = false;
   security.doas = {

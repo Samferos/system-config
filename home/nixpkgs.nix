@@ -3,6 +3,9 @@
   config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      "dropbox"
+      "firefox-bin"
+      "firefox-bin-unwrapped"
       "discord"
       "blender"
       "aseprite"
@@ -12,6 +15,7 @@
       "android-studio"
       "android-studio-stable"
       "android-studio-for-platform"
+      "sublimetext4"
     ];
 
   config.cudaSupport = true;

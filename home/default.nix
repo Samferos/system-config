@@ -1,4 +1,3 @@
-
 let
   sources = import ../npins;
 
@@ -8,7 +7,9 @@ let
 
   flakey-profile = import (sources.flakey-profile + "/lib");
 
-  custom-pkgs = import ../packages { inherit (pkgs) callPackage };
+  custom-pkgs = import ../packages { inherit (pkgs) callPackage; };
+
+  config = import ./config.nix { inherit pkgs; };
 in
 {
   profile = flakey-profile.mkProfile {
@@ -35,14 +36,18 @@ in
 
       ## Games
       gale
-      pkgs-unstable.heroic
+      heroic
       (prismlauncher.override {
         glfw3-minecraft = (glfw3-minecraft.override { withMinecraftPatch = true; });
       })
-      waywall
+      waywall # minecraft speedrunning wayland compositor
 
       ## Music
       ardour
+      (surge-XT.override {
+      	# nixpkgs has an accidental negation on this param so it doesn't build it by default
+      	buildLV2 = false;
+      })
       guitarix
       beets
       ffmpeg # Beets replaygain method
@@ -60,6 +65,7 @@ in
       btop
       pkgs-unstable.matugen
       bitwarden-desktop
+      maestral
       blender
       (pkgs.wrapOBS {
         plugins = with pkgs.obs-studio-plugins; [
@@ -70,15 +76,15 @@ in
       appimage-run
 
       ## Developement
-      (pkgs-unstable.android-studio.override {
+      (android-studio.override {
         tiling_wm = true;
       })
-      (pkgs-unstable.vscodium-fhsWithPackages (
+      (vscodium-fhsWithPackages (
         ps: with ps; [
           stdenv.cc.libcxx
         ]
       ))
-      pkgs-unstable.godot-mono
+      godot-mono
       nixd
       nil
       nixfmt-rfc-style
@@ -86,6 +92,7 @@ in
       glab
       nix-direnv
       direnv
+      pkgs-unstable.pragtical
 
       ## Emulators
       cemu

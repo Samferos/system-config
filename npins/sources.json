@@ -3,45 +3,36 @@
     "flakey-profile": {
       "type": "Tarball",
       "url": "https://github.com/lf-/flakey-profile/archive/3b32c4a71f89b874fe0be2dc125eacb9c3473204.tar.gz",
-      "hash": "1298zrxici7if9bm8hs7rzm6p5981sx1s295s352gj54b3jm20na"
+      "hash": "1298zrxici7if9bm8hs7rzm6p5981sx1s295s352gj54b3jm20na",
+      "frozen": true
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-25.11",
-      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.5065.41e216c0ca66/nixexprs.tar.xz",
-      "hash": "11l3mnblcqr3yxgplphs57ws0a01g5xcgkjkxhixyhjc1gx84srq"
+      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.10031.755f5aa91337/nixexprs.tar.xz",
+      "hash": "1acb7gj0m1kqcfrf9imvhx9cg453qs5z29wvq7x4z1yl88ijxk1a"
     },
     "nixpkgs-unstable": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre938561.eb8d947de7b0/nixexprs.tar.xz",
-      "hash": "1b8lji9phpjyr8pg5qx66jwagqvwn6kdgdxzdvyg5vc8f7cyx4gi"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre989763.7aaa00e7cc9b/nixexprs.tar.xz",
+      "hash": "0hcxgf52c08kj4pa5wchbc33c67a6hbk9bcpnd0s8lhl8lah7pvp"
     },
     "sway": {
-      "type": "Git",
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
         "owner": "swaywm",
         "repo": "sway"
       },
-      "branch": "master",
-      "submodules": true,
-      "revision": "055be4ec35eec4eaaf066a18ccbf5132ebed0694",
-      "url": null,
-      "hash": "0x8mn6f6c9sa4f8361r8g9jdh44sypwym4gdb9b343x1pqmnjs53"
-    },
-    "xdg-desktop-portal-wlr": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "emersion",
-        "repo": "xdg-desktop-portal-wlr"
-      },
-      "branch": "master",
+      "pre_releases": true,
+      "version_upper_bound": null,
+      "release_prefix": null,
       "submodules": false,
-      "revision": "0ab4f6f7908db671fa87013914830e5385536c7c",
-      "url": "https://github.com/emersion/xdg-desktop-portal-wlr/archive/0ab4f6f7908db671fa87013914830e5385536c7c.tar.gz",
-      "hash": "0hv8csrgnimb760alfckdfdhbqcs90l7wvsjbhgdxfd4gq6an1ac"
+      "version": "1.12-rc1",
+      "revision": "354bc40c48db31532592009592e892a568efc591",
+      "url": "https://api.github.com/repos/swaywm/sway/tarball/1.12-rc1",
+      "hash": "0asj5y6y80jmki87cjsfczqrl4jkizqbs2ghqi8k71i7js9sn1i4"
     }
   },
   "version": 5

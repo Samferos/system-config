@@ -1,5 +1,6 @@
 { pkgs, pkgs-unstable, ... }:
 {
+  programs.localsend.enable = true;
   programs.firefox.enable = false;
   programs.git.enable = true;
   programs.thunderbird.enable = true;
@@ -8,16 +9,6 @@
   programs.gamescope.enable = true;
   programs.gamemode = {
     enable = true;
-  };
-
-  services.emacs = {
-    enable = true;
-    package = with pkgs; ((emacsPackagesFor emacs).emacsWithPackages (epkgs: with epkgs; [
-      tree-sitter-langs
-      treesit-grammars.with-all-grammars
-    ]));
-    defaultEditor = true;
-    startWithGraphical = true;
   };
 
   programs.dconf.enable = true;
@@ -30,6 +21,7 @@
 
   environment.systemPackages = with pkgs; [
     vim
+    micro
     wget
     tree
     jq # JSON Utility CLI Tool
@@ -45,5 +37,6 @@
     ungoogled-chromium
     celluloid
     gapless
+    playerctl
   ];
 }

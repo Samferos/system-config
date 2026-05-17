@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }:
@@ -11,7 +12,7 @@
     "splash"
   ];
 
-  boot.consoleLogLevel = 3;
+  boot.consoleLogLevel = 0;
 
   #boot.kernelPatches = [
   #  {
@@ -29,7 +30,7 @@
   specialisation.debug.configuration = {
     boot.kernelParams = lib.mkForce [ ];
     boot.kernelPatches = lib.mkForce [ ];
-    boot.consoleLogLevel = lib.mkForce 3;
+    boot.consoleLogLevel = lib.mkForce 4;
   };
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
@@ -40,5 +41,5 @@
     options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
   '';
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 }

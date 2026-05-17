@@ -12,7 +12,10 @@ in
     ./pinning.nix
   ];
 
-  _module.args.pkgs-unstable = nixpkgs-unstable;
+  _module.args = { 
+  	pkgs-unstable = nixpkgs-unstable;
+  	npins-sources = source;
+  };
 
   nix = {
     package = pkgs.lixPackageSets.stable.lix;
@@ -31,7 +34,9 @@ in
     pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
+      "steam-original"
       "steam-unwrapped"
+      "steam-run"
       "cuda_cudart"
       "cuda_cccl"
       "cuda_nvcc"

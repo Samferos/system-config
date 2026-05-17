@@ -73,14 +73,20 @@
 
   security.polkit.enable = true;
 
-  session.desktop.name = "sway";
+  session.desktop.name = "niri";
+  session.desktop.terminalEmulator = pkgs.foot;
+
+  specialisation.gnome.configuration = {
+    session.desktop.name = lib.mkForce "gnome";
+  };
 
   ## XDG Settings
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    wlr.enable = lib.mkForce false;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
       xdg-desktop-portal-gnome
     ];
     config = {
@@ -93,4 +99,7 @@
       };
     };
   };
+
+  ## Default Editor
+  environment.variables.EDITOR = "micro";
 }

@@ -3,6 +3,7 @@
   pkgs,
   pkgs-unstable,
   lib,
+  npins-sources,
   ...
 }:
 
@@ -19,7 +20,6 @@ let
     "gnome"
   ];
   desktops = windowManagers ++ desktopEnvironments;
-
 in
 {
   options.session.desktop = {
@@ -57,6 +57,7 @@ in
           gnome-clocks
           gnome-calculator
           gnome-characters
+          gnome-text-editor
           batsignal
           simple-scan
           libnotify
@@ -128,7 +129,7 @@ in
             programs.sway = {
               enable = true;
               wrapperFeatures.gtk = true;
-              package = pkgs-unstable.swayfx;
+              package = pkgs.swayfx;
               extraPackages = with pkgs; [
                 swayws
               ];
@@ -160,7 +161,10 @@ in
           })
 
           (mkIf (cfg.name == "niri") {
-            programs.niri.enable = true;
+            programs.niri = {
+              enable = true;
+              package = pkgs-unstable.niri;
+            };
 
             environment.systemPackages = with pkgs; [
               xwayland-satellite
@@ -218,7 +222,6 @@ in
             showtime
             epiphany
             geary
-            gnome-text-editor
             gnome-connections
             gnome-console
             gnome-music
