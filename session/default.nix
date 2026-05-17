@@ -21,7 +21,7 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
-      nerd-fonts._0xproto
+      _0xproto
       rubik
       (google-fonts.override {
         fonts = [
@@ -53,7 +53,7 @@
           "Crimson Pro"
           "Noto Serif"
         ];
-        monospace = [ "0xProto Nerd Font" ];
+        monospace = [ "0xProto" ];
       };
     };
     fontDir.enable = true;
