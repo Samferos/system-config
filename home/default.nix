@@ -49,7 +49,7 @@ in
       	buildLV2 = false;
       })
       guitarix
-      beets
+      pkgs-unstable.beets # Stable version has a vulnerability
       ffmpeg # Beets replaygain method
       audacity
       mprisence # Discord MPRIS RPC
