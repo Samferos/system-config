@@ -23,6 +23,7 @@
       noto-fonts-color-emoji
       _0xproto
       rubik
+      font-awesome
       (google-fonts.override {
         fonts = [
           "Outfit"
