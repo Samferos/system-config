@@ -17,8 +17,6 @@
 
   hardware.keyboard.qmk.enable = true;
 
-  programs.adb.enable = true;
-
   environment.systemPackages = with pkgs; [
     vim
     micro
@@ -28,7 +26,7 @@
     brillo
     rar
     unrar
-    helvum # GTK-UI for pipewire
+    crosspipe # GTK-UI for pipewire
     xdg-user-dirs
     pwvucontrol
     npins

@@ -31,8 +31,4 @@
       offload.enableOffloadCmd = lib.mkForce false;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    cudatoolkit
-  ];
 }

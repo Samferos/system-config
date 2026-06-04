@@ -8,31 +8,15 @@
     },
     "nixpkgs": {
       "type": "Channel",
-      "name": "nixos-25.11",
-      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.11112.687f05a9184c/nixexprs.tar.xz",
-      "hash": "04nacgh0gcm5l9zdi09l4s966zampxqqvlfx2nvv4w541405nc5r"
+      "name": "nixos-26.05",
+      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.1183.6b316287bae2/nixexprs.tar.xz",
+      "hash": "0ils7p38g975dvsaf1wfvbr43r2a48wcrpdskz7vbfm24bz2a446"
     },
     "nixpkgs-unstable": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre989763.7aaa00e7cc9b/nixexprs.tar.xz",
-      "hash": "0hcxgf52c08kj4pa5wchbc33c67a6hbk9bcpnd0s8lhl8lah7pvp"
-    },
-    "sway": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "swaywm",
-        "repo": "sway"
-      },
-      "pre_releases": true,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "1.12-rc1",
-      "revision": "354bc40c48db31532592009592e892a568efc591",
-      "url": "https://api.github.com/repos/swaywm/sway/tarball/1.12-rc1",
-      "hash": "0asj5y6y80jmki87cjsfczqrl4jkizqbs2ghqi8k71i7js9sn1i4"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1009182.ffa10e26ae11/nixexprs.tar.xz",
+      "hash": "0k58kjljdi6x87ylawj5sqf7f7l85fj25gc5a8z4g4yxrwr3jz95"
     }
   },
   "version": 5

@@ -16,7 +16,6 @@
       wallpaperStyle = "centered";
       interface = {
         helpHidden = true;
-        brandingColor = 7;
         branding = "";
       };
       graphicalTerminal = {
