@@ -12,6 +12,7 @@
     "nvidia"
   ];
   hardware.nvidia.open = false;
+  hardware.nvidia.branch = "legacy_580";
 
   hardware.nvidia.prime = {
     offload.enable = true;

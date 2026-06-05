@@ -57,7 +57,6 @@
         monospace = [ "0xProto" ];
         emoji = [
           "Noto Emoji Color"
-          "Font Awesome 7 Free"
         ];
       };
     };
