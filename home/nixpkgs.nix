@@ -19,8 +19,6 @@
       "libcublas"
     ];
 
-  config.cudaSupport = true;
-
   overlays = [
     (final: prev: {
       discord = prev.discord.override { withVencord = true; };

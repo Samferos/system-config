@@ -44,12 +44,8 @@ in
 
       ## Music
       ardour
-      (surge-XT.override {
-      	# nixpkgs has an accidental negation on this param so it doesn't build it by default
-      	buildLV2 = false;
-      })
       guitarix
-      pkgs-unstable.beets # Stable version has a vulnerability
+      beets
       ffmpeg # Beets replaygain method
       audacity
       mprisence # Discord MPRIS RPC
@@ -64,8 +60,7 @@ in
       wayshot
       btop
       pkgs-unstable.matugen
-      maestral
-      blender
+      maestral # Dropbox Client
       (pkgs.wrapOBS {
         plugins = with pkgs.obs-studio-plugins; [
           wlrobs
@@ -91,11 +86,9 @@ in
       glab
       nix-direnv
       direnv
-      pkgs-unstable.pragtical
 
       ## Emulators
       cemu
-      pkgs-unstable.ryubing
 
       ## Theming
       tela-icon-theme
