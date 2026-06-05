@@ -16,6 +16,7 @@
       "android-studio-stable"
       "android-studio-for-platform"
       "sublimetext4"
+      "libcublas"
     ];
 
   config.cudaSupport = true;

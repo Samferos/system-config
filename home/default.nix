@@ -64,7 +64,6 @@ in
       wayshot
       btop
       pkgs-unstable.matugen
-      bitwarden-desktop
       maestral
       blender
       (pkgs.wrapOBS {
