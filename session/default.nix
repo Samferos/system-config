@@ -103,7 +103,4 @@
       };
     };
   };
-
-  ## Default Editor
-  environment.variables.EDITOR = "micro";
 }

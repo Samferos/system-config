@@ -10,6 +10,10 @@
   programs.gamemode = {
     enable = true;
   };
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   programs.dconf.enable = true;
 
