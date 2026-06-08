@@ -56,7 +56,7 @@ in
       tree-sitter
       texliveFull
       swayimg
-      swww
+      awww
       wayshot
       btop
       pkgs-unstable.matugen
@@ -81,7 +81,7 @@ in
       godot-mono
       nixd
       nil
-      nixfmt-rfc-style
+      nixfmt
       git-repo
       glab
       nix-direnv
