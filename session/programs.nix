@@ -38,7 +38,7 @@
     libreoffice-fresh
     ungoogled-chromium
     celluloid
-    gapless
+    lollypop
     playerctl
   ];
 }
