@@ -25,7 +25,7 @@ in
     pinned = { inherit (sources) nixpkgs; };
     paths = with pkgs; [
       ## Socials
-      discord
+      pkgs-unstable.discord
 
       ## Educational
       anki

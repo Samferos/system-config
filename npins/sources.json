@@ -3,21 +3,21 @@
     "flakey-profile": {
       "type": "Tarball",
       "url": "https://github.com/lf-/flakey-profile/archive/3b32c4a71f89b874fe0be2dc125eacb9c3473204.tar.gz",
-      "hash": "1298zrxici7if9bm8hs7rzm6p5981sx1s295s352gj54b3jm20na",
+      "hash": "sha256-ygJR5VikyCfK0CUJHboOKJVr6s9HQ1RXcvFEFnv+KIk=",
       "frozen": true
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-26.05",
       "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.1183.6b316287bae2/nixexprs.tar.xz",
-      "hash": "0ils7p38g975dvsaf1wfvbr43r2a48wcrpdskz7vbfm24bz2a446"
+      "hash": "sha256-hhAl/iKiurXPn7rdzDgiSuRB8tqOB6f0buWkh8Y9mkY="
     },
     "nixpkgs-unstable": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1009182.ffa10e26ae11/nixexprs.tar.xz",
-      "hash": "0k58kjljdi6x87ylawj5sqf7f7l85fj25gc5a8z4g4yxrwr3jz95"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1017567.3e41b24abd26/nixexprs.tar.xz",
+      "hash": "sha256-eM+l4TVD26SNoEjcxRcpispqZi5Qrqj/G0ZY4LfqwfM="
     }
   },
-  "version": 5
+  "version": 7
 }
