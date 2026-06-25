@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  musicFolder = "/usr/share/music";
+  musicFolder = "/srv/music";
 in
 {
   ## Syncing to phone
