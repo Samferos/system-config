@@ -24,6 +24,7 @@
       _0xproto
       rubik
       font-awesome
+      source-sans-pro
       (google-fonts.override {
         fonts = [
           "Outfit"
