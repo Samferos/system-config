@@ -33,7 +33,7 @@ stdenv.mkDerivation {
     wayland-scanner
     which
   ];
-  preBuild = ''
-    export DESTDIR=$out
-  '';
+  makeFlags = [ 
+    "PREFIX=$(out)"
+  ];
 }
