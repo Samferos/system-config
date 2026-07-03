@@ -33,7 +33,9 @@ stdenv.mkDerivation {
     which
   ];
   buildInputs = [
-    python3
+    (python3.withPackages (ps: [
+      ps.pillow
+    ]))
   ];
   makeFlags = [ 
     "PREFIX=$(out)"
