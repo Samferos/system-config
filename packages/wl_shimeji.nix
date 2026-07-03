@@ -26,12 +26,14 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     libarchive
     pkg-config
-    python3
     uthash
     wayland
     wayland-protocols
     wayland-scanner
     which
+  ];
+  buildInputs = [
+    python3
   ];
   makeFlags = [ 
     "PREFIX=$(out)"
