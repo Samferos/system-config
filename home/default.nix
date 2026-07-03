@@ -7,7 +7,7 @@ let
 
   flakey-profile = import (sources.flakey-profile + "/lib");
 
-  custom-pkgs = import ../packages { inherit (pkgs) callPackage; };
+  custom-pkgs = import ../packages;
 
   config = import ./config.nix { inherit pkgs; };
 in
@@ -57,6 +57,8 @@ in
       texliveFull
       swayimg
       awww
+      custom-pkgs.livebg
+      custom-pkgs.wl_shimeji
       wayshot
       btop
       pkgs-unstable.matugen
