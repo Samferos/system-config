@@ -46,7 +46,6 @@ in
       ardour
       guitarix
       beets
-      ffmpeg # Beets replaygain method
       audacity
       mprisence # Discord MPRIS RPC
 
