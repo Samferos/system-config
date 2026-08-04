@@ -84,24 +84,4 @@
   specialisation.gnome.configuration = {
     session.desktop.name = lib.mkForce "gnome";
   };
-
-  ## XDG Settings
-  xdg.portal = {
-    enable = true;
-    wlr.enable = lib.mkForce false;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gnome
-    ];
-    config = {
-      common = {
-        default = [
-          "gnome"
-          "gtk"
-          "wlr"
-        ];
-      };
-    };
-  };
 }
