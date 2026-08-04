@@ -37,8 +37,8 @@ in
       ## Games
       gale
       heroic
-      (prismlauncher.override {
-        glfw3-minecraft = (glfw3-minecraft.override { withMinecraftPatch = true; });
+      (pkgs-unstable.prismlauncher.override {
+        glfw3-minecraft = pkgs-unstable.glfw3-minecraft;
       })
       waywall # minecraft speedrunning wayland compositor
 

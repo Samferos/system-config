@@ -69,6 +69,25 @@ in
           terminal = getName cfg.terminalEmulator;
         };
 
+        xdg.portal = {
+          enable = true;
+          wlr.enable = lib.mkForce false;
+          extraPortals = with pkgs; [
+            xdg-desktop-portal-gtk
+            xdg-desktop-portal-wlr
+            xdg-desktop-portal-gnome
+          ];
+          config = {
+            common = {
+              default = [
+                "gnome"
+                "gtk"
+                "wlr"
+              ];
+            };
+          };
+        };
+
         programs.nm-applet.enable = true;
         programs.gnome-disks.enable = true;
         services.blueman.enable = true;
@@ -142,6 +161,8 @@ in
               WLR_RENDERER = "vulkan";
             };
 
+            qt.style = "adwaita";
+
             environment.etc."libinput/local-overrides.quirks".text = ''
             [Mouse Debouncing]
             MatchUdevType=mouse
@@ -169,6 +190,8 @@ in
             environment.systemPackages = with pkgs; [
               xwayland-satellite
             ];
+
+            qt.style = "adwaita";
           })
         ]))
 
@@ -186,12 +209,8 @@ in
             kdePackages.kcolorchooser
             kdePackages.kolourpaint
             kdePackages.ksystemlog
-            kdePackages.sddm-kcm
-            kdiff3
             kdePackages.isoimagewriter
             kdePackages.partitionmanager
-            hardinfo2
-            haruna
           ];
 
           environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -206,7 +225,6 @@ in
             enable = true;
             type = "fcitx5";
             fcitx5.addons = with pkgs; [
-              fcitx5-gtk
               fcitx5-mozc-ut
             ];
             fcitx5.waylandFrontend = true;
@@ -230,7 +248,7 @@ in
             gnome-builder
             yelp
           ];
-          
+
           i18n.inputMethod = {
             enable = false;
             type = "ibus";
@@ -238,7 +256,7 @@ in
               mozc-ut
             ];
           };
-          
+
           programs.nautilus-open-any-terminal = {
             enable = true;
             terminal = getName cfg.terminalEmulator;
