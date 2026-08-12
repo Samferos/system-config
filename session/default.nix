@@ -78,7 +78,7 @@
 
   security.polkit.enable = true;
 
-  session.desktop.name = "kde";
+  session.desktop.name = "niri";
   session.desktop.terminalEmulator = pkgs.foot;
 
   specialisation.gnome.configuration = {
