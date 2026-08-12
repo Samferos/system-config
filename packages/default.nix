@@ -6,4 +6,5 @@ in
   kotlin-lsp = callPackage ./kotlin-lsp.nix {};
   livebg = callPackage ./livebg.nix {};
   wl_shimeji = callPackage ./wl_shimeji.nix {};
+  ninjabrain-bot = callPackage ./ninjabrain-bot.nix {};
 }

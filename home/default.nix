@@ -58,6 +58,7 @@ in
       awww
       custom-pkgs.livebg
       custom-pkgs.wl_shimeji
+      custom-pkgs.ninjabrain-bot
       wayshot
       btop
       pkgs-unstable.matugen
