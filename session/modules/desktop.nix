@@ -25,8 +25,8 @@ in
   options.session.desktop = {
     name = mkOption {
       description = ''
-        		  The name of the desired desktop.
-        		  '';
+              The name of the desired desktop.
+              '';
       type = types.enum desktops;
       default = "sway";
     };

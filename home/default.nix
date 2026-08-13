@@ -44,6 +44,7 @@ in
 
       ## Music
       ardour
+      gapless
       guitarix
       beets
       audacity
