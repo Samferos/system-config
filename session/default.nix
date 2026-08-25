@@ -84,6 +84,4 @@
   specialisation.gnome.configuration = {
     session.desktop.name = lib.mkForce "gnome";
   };
-
-  hardware.opentabletdriver.enable = true;
 }
