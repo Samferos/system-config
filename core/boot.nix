@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-	## Bootloader
+  ## Bootloader
 
   boot.loader.systemd-boot = {
     enable = false;

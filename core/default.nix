@@ -1,17 +1,17 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
-	imports = [
-		./kernel.nix
-		./boot.nix
-	];
+  imports = [
+    ./kernel.nix
+    ./boot.nix
+  ];
 
   networking.hostName = "bluerose";
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.powersave = true;
   networking.wireguard.enable = true;
   networking.firewall = {
-		enable = true;
-		checkReversePath = false;
+    enable = true;
+    checkReversePath = false;
   };
 
   powerManagement.enable = true;
@@ -56,10 +56,10 @@
     keyMap = "fr";
   };
   services.kmscon = {
-  	enable = true;
-  	extraConfig = ''
-  	xkb-layout=fr
-  	'';
+    enable = true;
+    extraConfig = ''
+    xkb-layout=fr
+    '';
   };
 
   security.sudo.enable = false;
@@ -70,4 +70,16 @@
   security.pam.loginLimits = [
     { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
   ];
+
+  # Register Appimage as a binary executable format
+  boot.binfmt.registrations.appimage = {
+    wrapInterpreterInShell = false;
+    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    recognitionType = "magic";
+    offset = 0;
+    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+    magicOrExtension = ''\x7fELF....AI\x02'';
+  };
+
+  hardware.uinput.enable = true;
 }

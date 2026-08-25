@@ -70,7 +70,6 @@ in
           obs-pipewire-audio-capture
         ];
       })
-      appimage-run
 
       ## Developement
       (android-studio.override {
@@ -92,6 +91,7 @@ in
 
       ## Emulators
       cemu
+      pkgs-unstable.eden
 
       ## Theming
       tela-icon-theme
