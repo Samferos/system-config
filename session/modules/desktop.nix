@@ -148,7 +148,6 @@ in
             programs.sway = {
               enable = true;
               wrapperFeatures.gtk = true;
-              package = pkgs.swayfx;
               extraPackages = with pkgs; [
                 swayws
               ];
@@ -176,6 +175,7 @@ in
                   prettyName = "sway";
                   comment = "an i3 compatible wayland compositor";
                   binPath = "/run/current-system/sw/bin/sway";
+                  extraArgs = [ "--unsupported-gpu" ];
                 };
               };
             };
