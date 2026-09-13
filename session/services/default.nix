@@ -18,6 +18,7 @@
       gutenprint
       epson-escpr
       epson-escpr2
+      hplip
     ];
   };
   services.avahi = {
