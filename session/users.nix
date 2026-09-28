@@ -3,7 +3,7 @@
 {
   users.users.samuel = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "networkmanager" "adbusers" ];
+    extraGroups = [ "wheel" "video" "networkmanager" "adbusers" "music" ];
   };
 
   users.defaultUserShell = pkgs.zsh;

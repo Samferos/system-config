@@ -5,6 +5,7 @@ in
 {
   ## Syncing to phone
   services.syncthing = {
+    user = "syncthing"; # just to be sure
     enable = true;
     openDefaultPorts = true;
     settings = rec {
@@ -30,11 +31,17 @@ in
     "10-syncthing" = {
       ${musicFolder} = {
         d = {
-          group = "users";
+          group = "music";
           mode = "2775";
           user = "syncthing";
         };
       };
+    };
+  };
+
+  users.groups = {
+    music = {
+      members = [ "syncthing" ];
     };
   };
 }
