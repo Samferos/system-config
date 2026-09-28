@@ -27,7 +27,7 @@
     openFirewall = true;
   };
 
-  ## Scanning
+  ## Document Scanning
   hardware.sane.enable = true;
 
   ## Audio

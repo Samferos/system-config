@@ -1,6 +1,6 @@
 let
   sources = import ./npins;
-in 
+in
 {
   nix.settings.experimental-features = [
     "nix-command"
@@ -15,7 +15,7 @@ in
   nix.nixPath = [
     "nixpkgs=flake:nixpkgs"
     "nixpkgs-unstable=${sources.nixpkgs-unstable}"
-	"nixpkgs-overlays=${builtins.toString ./core/overlays}"
+    "nixpkgs-overlays=${builtins.toString ./core/overlays}"
     "nixos-config=${builtins.toString ./configuration.nix}"
   ];
 }

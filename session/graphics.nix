@@ -14,18 +14,20 @@
     "modesetting"
     "nvidia"
   ];
-  hardware.nvidia.open = false;
-  hardware.nvidia.branch = "legacy_580";
+  hardware.nvidia = {
+    open = false;
+    branch = "legacy_580";
+    modesetting.enable = true;
+    powerManagement.enable = true;
 
-  hardware.nvidia.prime = {
-    offload.enable = true;
-    offload.enableOffloadCmd = true;
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
 
-    intelBusId = "PCI:0@0:2:0";
-    nvidiaBusId = "PCI:1@0:0:0";
+      intelBusId = "PCI:0@0:2:0";
+      nvidiaBusId = "PCI:1@0:0:0";
+    };
   };
-
-  hardware.nvidia.modesetting.enable = true;
 
   specialisation.full-power.configuration = {
     system.nixos.tags = [ "full-power" ];

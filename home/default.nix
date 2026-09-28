@@ -75,23 +75,16 @@ in
       (android-studio.override {
         tiling_wm = true;
       })
-      (vscodium-fhsWithPackages (
-        ps: with ps; [
-          stdenv.cc.libcxx
-        ]
-      ))
       godot-mono
       nixd
       nil
       nixfmt
-      git-repo
       glab
       nix-direnv
       direnv
 
       ## Emulators
       cemu
-      pkgs-unstable.eden
 
       ## Theming
       tela-icon-theme
