@@ -7,6 +7,7 @@
       "firefox-bin"
       "firefox-bin-unwrapped"
       "discord"
+      "discord-unwrapped"
       "blender"
       "aseprite"
       "cuda_cudart"

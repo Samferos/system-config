@@ -25,10 +25,11 @@ in
     pinned = { inherit (sources) nixpkgs; };
     paths = with pkgs; [
       ## Socials
-      pkgs-unstable.discord
+      vesktop
+      arrpc
 
       ## Educational
-      anki
+      anki-bin
 
       ## Design
       inkscape
@@ -36,7 +37,7 @@ in
 
       ## Games
       gale
-      heroic
+      pkgs-unstable.heroic
       (pkgs-unstable.prismlauncher.override {
         glfw3-minecraft = pkgs-unstable.glfw3-minecraft;
       })
@@ -51,7 +52,6 @@ in
       mprisence # Discord MPRIS RPC
 
       ## Utility
-      fd # nvim-telescope find file
       ripgrep
       tree-sitter
       texliveFull
